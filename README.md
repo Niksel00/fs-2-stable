@@ -19,7 +19,7 @@
 ## 3. Клиентская часть
 localhost
 
-## 3. Админская часть
+## 4. Админская часть
 localhost/admin <br />
 Логин admin@mail.ru <br />
 Пароль admin <br />
