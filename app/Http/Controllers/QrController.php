@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\Post;
 use App\Models\Ticket;
+use App\Models\MovieShow;
+use SimpleSoftwareIO\QrCode\Generator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class QrController extends Controller
@@ -53,13 +56,14 @@ class QrController extends Controller
         foreach ($ordered as $order) {
             $seatsString .= $order . ', ';
         }
-        $qrText = "Id билета: $ticket->id;
+        $qrtext = "Id билета: $ticket->id,
         Зал: $ticket->hall_name,
         $seatsString,
-        Фильм: $ticket->film,
+        Фильм: $ticket->film
         Дата: $ticket->start_day";
 
-        $iso88591_1 = utf8_encode($qrText);
+        $iso88591_1 = utf8_encode($qrtext);
+
 
         $qrCode = QrCode::size(200)->generate($iso88591_1);
 
@@ -74,7 +78,7 @@ class QrController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
