@@ -21,5 +21,5 @@ localhost
 
 ## 4. Админская часть
 localhost/admin <br />
-Логин admin@mail.ru <br />
-Пароль admin <br />
+Логин: admin@mail.ru <br />
+Пароль: admin <br />
